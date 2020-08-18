@@ -1,0 +1,6 @@
+[submodule "OptimExplorer/vendor/mahi"]
+	path = OptimExplorer/vendor/mahi
+	url = https://github.com/mahilab/mahi-gui.git
+[submodule "OptimExplorer/vendor/eventpp"]
+	path = OptimExplorer/vendor/eventpp
+	url = https://github.com/wqking/eventpp.git
