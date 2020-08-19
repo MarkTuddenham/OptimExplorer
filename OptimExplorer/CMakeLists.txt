@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 
 find_package(Torch REQUIRED)
+find_package(TorchVision REQUIRED)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TORCH_CXX_FLAGS}")
 
 # The following code block is suggested to be used on Windows. According to
@@ -21,8 +22,14 @@ set(MAHI_UTIL_DEFAULT_LOG OFF)
 add_subdirectory(vendor/mahi)
 
 add_executable(
-  OptimExplorer main.cpp core/app.cpp core/events.cpp torch/torch.cpp widgets/metrics.cpp
-                widgets/train.cpp widgets/utils.cpp)
+  OptimExplorer
+  main.cpp
+  core/app.cpp
+  core/events.cpp
+  torch/torch.cpp
+  widgets/metrics.cpp
+  widgets/train.cpp
+  widgets/utils.cpp)
 
 set(TARGET_COMPILE_DEFINITIONS "")
 set(TARGET_PRIVATE_LINK_LIBS mahi::gui "${TORCH_LIBRARIES}")
@@ -73,4 +80,5 @@ target_include_directories(
   PUBLIC "${PROJECT_SOURCE_DIR}/" "${PROJECT_BINARY_DIR}/"
   INTERFACE "${PROJECT_SOURCE_DIR}/OptimExplorer")
 
-target_link_libraries(OptimExplorer PRIVATE ${TARGET_PRIVATE_LINK_LIBS})
+target_link_libraries(OptimExplorer PRIVATE TorchVision::TorchVision
+                                            ${TARGET_PRIVATE_LINK_LIBS})
