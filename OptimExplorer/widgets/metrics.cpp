@@ -29,7 +29,7 @@ void MetricsWidget::render()
 
 void MetricsWidget::render_accuracy()
 {
-  if (ImGui::CollapsingHeader("Accuracy"))
+  if (ImGui::CollapsingHeader("Accuracy", ImGuiTreeNodeFlags_DefaultOpen))
   {
 
     ImPlot::SetNextPlotLimitsY(0, 100, ImGuiCond_Always);
@@ -66,7 +66,7 @@ void MetricsWidget::render_accuracy()
 
 void MetricsWidget::render_loss()
 {
-  if (ImGui::CollapsingHeader("Loss"))
+  if (ImGui::CollapsingHeader("Loss", ImGuiTreeNodeFlags_DefaultOpen))
   {
 
     ImPlot::SetNextPlotLimitsY(0, 3, ImGuiCond_FirstUseEver);
