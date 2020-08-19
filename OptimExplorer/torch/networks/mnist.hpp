@@ -7,7 +7,7 @@ namespace OptimExplorer::networks
 
 namespace mnist
 {
-struct Net : torch::nn::Module
+struct Net : public torch::nn::Module
 {
   Net()
   {
@@ -28,7 +28,7 @@ struct Net : torch::nn::Module
   torch::nn::Linear fc1{nullptr}, fc2{nullptr}, fc3{nullptr};
 };
 
-struct CNNNet : torch::nn::Module
+struct CNNNet : public torch::nn::Module
 {
   CNNNet()
       : fc1(4 * 4 * 20, 10),
