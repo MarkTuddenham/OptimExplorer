@@ -1,3 +1,3 @@
 #pragma once
 
-#include "networks/mnist.hpp"
+#include "torch/networks/mnist.hpp"
