@@ -1,7 +1,6 @@
 #pragma once
 
 #include "core/utils.hpp"
-#include "torch/torch.hpp"
 #include "widgets/metrics.hpp"
 #include "widgets/train.hpp"
 #include "widgets/widget.hpp"
@@ -10,6 +9,9 @@ DISABLE_WARNING_PUSH_ALL
 #include <Mahi/Gui.hpp>
 #include <Mahi/Util.hpp>
 DISABLE_WARNING_POP
+
+#include "torch/torch.hpp"
+
 #include <memory>
 #include <thread>
 #include <vector>
