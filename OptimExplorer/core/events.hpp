@@ -21,8 +21,10 @@ enum EventType
   TestMetric,
   ClearMetrics,
 
+  // TorchSystem
   TrainModel,
   TestModel,
+  DoEpoch,
   SetHparam,
 };
 
