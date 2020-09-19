@@ -50,7 +50,7 @@ public:
   {}
 
   const std::string& get_name() const { return m_name; }
-  std::pair<double, double> get_metric() const { return m_metric; }
+  const std::pair<double, double>& get_metric() const { return m_metric; }
 
 private:
   const std::string m_name;
